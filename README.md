@@ -24,6 +24,7 @@ Backend:
   - get all active repo's
   - get all issues for 1 repo
   - request free code fix using openrouter
+
 Frontend:
   - display data
   - request fix
