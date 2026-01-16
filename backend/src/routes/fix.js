@@ -22,7 +22,6 @@ router.use(limiter);
  *  - issue: string (optional)
  */
 router.get('/', async (req, res) => {
-  console.log('backend reached');
 
   const code = req.query.code;
   const language = req.query.language || 'php';

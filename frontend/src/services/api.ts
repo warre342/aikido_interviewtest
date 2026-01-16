@@ -32,7 +32,6 @@ export async function fetchCodeFix(
     const response = await axios.get(`${API_BASE}/fix`, {
       params: { code, language, issue },
     });
-    console.log(response)
     return response.data; // returns string
   } catch (err: any) {
     console.error('Error fetching code fix:', err);

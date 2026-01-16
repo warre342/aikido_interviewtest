@@ -35,7 +35,7 @@ async function getClientCredentialsToken() {
     return accessToken;
 }
 
-/**
+/** not used yet
  * Refresh token
  * @param {string} refreshToken - refresh token from previous authorization
  */
@@ -61,7 +61,6 @@ async function refreshToken(refreshToken) {
  * Automatically attaches Bearer token
  */
 export async function aikidoApi() {
-    console.log("aikidoApi function called")
     const token = await getClientCredentialsToken(); // default to client credentials
     const instance = axios.create({
         baseURL: 'https://app.aikido.dev/api/',

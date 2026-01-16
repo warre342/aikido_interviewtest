@@ -4,6 +4,17 @@ import * as express from 'express';
 
 const router = express.Router();
 
+//https://apidocs.aikido.dev/reference/rate-limiting
+const limiter = rateLimit({
+  windowMs: 60 * 1000, // 1 minute
+  max: 20,              // max 20 requests per window
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: 'Too many requests from this IP, please try again later.',
+});
+
+// Apply limiter to all routes in this router
+router.use(limiter);
 // GET /api/issues/:repoId
 router.get('/:repoId', async (req, res) => {
   const { repoId } = req.params;
