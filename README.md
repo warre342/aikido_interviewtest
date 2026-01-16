@@ -18,3 +18,7 @@ CLIENT_SECRET=
 REDIRECT_URI=http://localhost:3000/callback
 OPENROUTER_API_KEY=
 ```
+
+# Demo
+https://github.com/user-attachments/assets/a7417444-c90a-4541-a238-2774ad94eedc
+
