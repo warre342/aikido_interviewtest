@@ -1,6 +1,7 @@
 // server/routes/issues.ts
 import { aikidoApi } from '../services/aikidoAuth.js';
 import * as express from 'express';
+import { rateLimit } from 'express-rate-limit';
 
 const router = express.Router();
 

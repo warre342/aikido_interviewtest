@@ -1,6 +1,6 @@
 import express from 'express';
 import axios from 'axios';
-import rateLimit from 'express-rate-limit';
+import { rateLimit } from 'express-rate-limit';
 
 const router = express.Router();
 

@@ -21,6 +21,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import { getRepositories } from '../services/api.ts';
+import './MainView.scss'; // <-- import the SCSS file
 
 export default defineComponent({
   name: 'MainView',
@@ -38,12 +39,12 @@ export default defineComponent({
       try {
         const allRepos = await getRepositories();
         // Filter only active repos and format timestamp
-        this.repos = allRepos
-          .filter(r => r.active)
-          .map(r => ({
-            ...r,
-            last_scanned_at: new Date(r.last_scanned_at * 1000).toLocaleString()
-          }));
+      this.repos = allRepos
+        .filter((r: any) => r.active)
+        .map((r: any) => ({
+          ...r,
+          last_scanned_at: new Date(r.last_scanned_at * 1000).toLocaleString()
+        }));
       } catch (err) {
         this.error = 'Failed to fetch repositories';
         console.error(err);
@@ -61,17 +62,3 @@ export default defineComponent({
   }
 });
 </script>
-
-<style scoped>
-.repo-card {
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  padding: 1rem;
-  margin-bottom: 1rem;
-}
-
-button {
-  padding: 0.5rem 1rem;
-  margin-top: 0.5rem;
-}
-</style>
