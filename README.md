@@ -11,6 +11,7 @@ npm install
 npm run dev
 ```
 **.env file**
+
 the .env file (backend/.env) should have the following structure
 ```
 CLIENT_ID=
